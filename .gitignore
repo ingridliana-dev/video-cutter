@@ -55,4 +55,8 @@ ARM64/
 
 # Ignorar pasta de apoio, exceto o script PowerShell
 apoio/
-!apoio/cortar_videos.ps1 
+!apoio/cortar_videos.ps1
+
+# Ignorar arquivos de mídia grandes (vindos do remoto)
+*.mp4
+*.png
