@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+// Usings #if WINDOWS removidos pois a lógica vai para App.xaml.cs
 
 namespace VideoCutterApp;
 
