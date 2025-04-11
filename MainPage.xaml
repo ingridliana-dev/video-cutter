@@ -112,12 +112,15 @@
                     FontSize="16"
                     FontFamily="OpenSansSemibold"
                     HorizontalOptions="Start" />
-                <ScrollView HeightRequest="150">
-                     <Editor 
+                <ScrollView x:Name="LogScrollView" 
+                            HeightRequest="350" 
+                            VerticalScrollBarVisibility="Always">
+                     <Label 
                         x:Name="LogEditor"
-                        IsReadOnly="True"
                         FontSize="Small"
-                        BackgroundColor="#f0f0f0" 
+                        BackgroundColor="#333333"
+                        TextColor="White"
+                        LineBreakMode="WordWrap"
                         VerticalOptions="FillAndExpand"/>
                 </ScrollView>
             </VerticalStackLayout>
