@@ -1,0 +1,16 @@
+{
+  "profiles": {
+    "Windows Machine": {
+      "commandName": "MsixPackage",
+      "nativeDebugging": false
+    },
+    "VideoCutterApp (Package)": {
+      "commandName": "MsixPackage",
+      "nativeDebugging": false
+    },
+    "VideoCutterApp (Unpackaged)": {
+      "commandName": "Project",
+      "nativeDebugging": false
+    }
+  }
+}

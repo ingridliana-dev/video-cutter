@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="VideoCutterApp.MainPage"
+             Title="Video Cutter App">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="25" Spacing="20">
+
+            <!-- Seleção de Arquivos -->
+            <VerticalStackLayout Spacing="15">
+                <Label Text="Arquivos de Entrada" FontSize="18" FontFamily="OpenSansSemibold" Margin="0,0,0,5"/>
+                
+                <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                    <Button
+                        x:Name="SelectVideoButton"
+                        Text="Selecionar Vídeo Principal"
+                        Clicked="OnSelectVideoClicked" 
+                        HorizontalOptions="Start"
+                        WidthRequest="200"/>
+                    <Label 
+                        x:Name="VideoPathLabel"
+                        Text="Nenhum arquivo selecionado"
+                        VerticalTextAlignment="Center"
+                        LineBreakMode="TailTruncation"/>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                    <Button
+                        x:Name="SelectImageButton"
+                        Text="Selecionar Imagem Capa"
+                        Clicked="OnSelectImageClicked"
+                        HorizontalOptions="Start"
+                        WidthRequest="200"/>
+                    <Label 
+                        x:Name="ImagePathLabel"
+                        Text="Nenhum arquivo selecionado"
+                        VerticalTextAlignment="Center"
+                        LineBreakMode="TailTruncation"/>
+                </HorizontalStackLayout>
+                
+                <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                     <Button
+                        x:Name="SelectSeloButton"
+                        Text="Selecionar Vídeo Selo"
+                        Clicked="OnSelectSeloClicked"
+                        HorizontalOptions="Start"
+                        WidthRequest="200"/>
+                     <Label 
+                        x:Name="SeloPathLabel"
+                        Text="Nenhum arquivo selecionado"
+                        VerticalTextAlignment="Center"
+                        LineBreakMode="TailTruncation"/>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+            
+            <BoxView HeightRequest="1" Color="LightGray" Margin="0,10,0,10"/>
+
+            <!-- Configurações de Saída -->
+            <VerticalStackLayout Spacing="15">
+                <Label Text="Configurações de Saída" FontSize="18" FontFamily="OpenSansSemibold" Margin="0,0,0,5"/>
+                
+                <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                    <Label Text="Prefixo Nome Saída:" VerticalTextAlignment="Center" WidthRequest="160"/>
+                    <Entry x:Name="OutputPrefixEntry" Placeholder="Ex: MeuVideo_Parte_" MaxLength="50" HorizontalOptions="FillAndExpand"/>
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                     <Label Text="Número Inicial:" VerticalTextAlignment="Center" WidthRequest="160"/>
+                     <Entry x:Name="StartIndexEntry" Text="1" Keyboard="Numeric" MaxLength="5" WidthRequest="80"/>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+
+            <BoxView HeightRequest="1" Color="LightGray" Margin="0,10,0,10"/>
+
+            <!-- Configurações de Corte -->
+            <VerticalStackLayout Spacing="15">
+                <Label Text="Configurações de Corte" FontSize="18" FontFamily="OpenSansSemibold" Margin="0,0,0,5"/>
+
+                <HorizontalStackLayout Spacing="10" VerticalOptions="Center">
+                     <Label Text="Duração Mín (s):" VerticalTextAlignment="Center" WidthRequest="120"/>
+                     <Entry x:Name="MinDurationEntry" Text="90" Keyboard="Numeric" MaxLength="4" WidthRequest="60"/>
+                     <Label Text="Duração Máx (s):" VerticalTextAlignment="Center" Margin="20,0,0,0"/>
+                     <Entry x:Name="MaxDurationEntry" Text="130" Keyboard="Numeric" MaxLength="4" WidthRequest="60"/>
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+
+            <BoxView HeightRequest="1" Color="LightGray" Margin="0,10,0,10"/>
+
+            <!-- Botões de Ação -->
+            <HorizontalStackLayout Spacing="20" HorizontalOptions="Center" Margin="0,15,0,5">
+                <Button 
+                    x:Name="StartButton"
+                    Text="Cortar"
+                    FontSize="14"
+                    Clicked="OnStartProcessingClicked"
+                    WidthRequest="120"/>
+
+                 <Button 
+                    x:Name="OpenFolderButton"
+                    Text="Abrir Pasta de Saída"
+                    FontSize="14"
+                    IsEnabled="False" 
+                    Clicked="OnOpenFolderClicked"
+                    WidthRequest="120"/>
+            </HorizontalStackLayout>
+
+            <!-- Área de Log -->
+            <VerticalStackLayout Spacing="10" Margin="0,15,0,0">
+                <Label 
+                    Text="Log de Processamento:"
+                    FontSize="16"
+                    FontFamily="OpenSansSemibold"
+                    HorizontalOptions="Start" />
+                <ScrollView HeightRequest="150">
+                     <Editor 
+                        x:Name="LogEditor"
+                        IsReadOnly="True"
+                        FontSize="Small"
+                        BackgroundColor="#f0f0f0" 
+                        VerticalOptions="FillAndExpand"/>
+                </ScrollView>
+            </VerticalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,58 @@
+# .NET Core build artifacts
+[Bb]in/
+[Oo]bj/
+
+# Visual Studio code coverage results
+*.coverage
+*.coveragexml
+
+# Visual Studio temporary files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Rider temporary files
+.idea/
+*.sln.iml
+
+# Mac files
+.DS_Store
+
+# Windows thumbnail cache files
+Thumbs.db
+ehthumbs.db
+
+# User-specific files
+*.rsuser
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+[Dd]ebugPublic/
+[Rr]eleasePublic/
+x64/
+ARM64/
+
+# Secrets
+**/appsettings.Development.json
+**/secrets.json
+
+# Paket dependency manager
+.paket/paket.exe
+.paket/paket.exe.config
+
+# FAKE - F# Make
+.fake/
+
+# LinqPad
+*.linq
+
+# Others
+*.log
+*.tmp
+*.pdb
+
+# Ignorar pasta de apoio, exceto o script PowerShell
+apoio/
+!apoio/cortar_videos.ps1 
